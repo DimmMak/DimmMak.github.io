@@ -74,6 +74,7 @@ highlighter: rouge
 paginate: 10
 paginate_path: /page:num/
 excerpt_separator: "<!--more-->"
+future: true   # publish future-dated posts immediately (local time vs UTC drift)
 
 # Plugins (GitHub Pages whitelist)
 plugins:
