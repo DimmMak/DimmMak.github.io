@@ -40,11 +40,32 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+        run: |
+          set -o pipefail
+          bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" 2>&1 | tee jekyll-build.log
         env:
           JEKYLL_ENV: "production"
 
-      - name: Test site
+      # Guardrail 1: fail if Jekyll emitted any "Build Warning: Layout ... does not exist".
+      # These warnings indicate a theme/layout misconfiguration (exactly the class of silent
+      # failure that caused the 'no theme' bug on 2026-04-19). Jekyll doesn't error on them
+      # by default — we make them fatal here.
+      - name: Gate on Jekyll build warnings
+        run: |
+          if grep -qE "Build Warning: Layout .* does not exist" jekyll-build.log; then
+            echo "::error::Jekyll emitted layout-missing warnings. Theme is not applying."
+            grep "Build Warning" jekyll-build.log
+            exit 1
+          fi
+          echo "✅ No layout warnings."
+
+      # Guardrail 2: structural smoke test on the built _site.
+      # Asserts every page has <!doctype>, <head>, <body>; index.html links a
+      # stylesheet; file size is reasonable; home page has at least one article.
+      - name: Smoke test built site
+        run: ./scripts/smoke-test.sh "_site${{ steps.pages.outputs.base_path }}"
+
+      - name: Test site (htmlproofer)
         run: |
           bundle exec htmlproofer _site \
             --disable-external \
