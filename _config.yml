@@ -1,102 +1,105 @@
 # ────────────────────────────────────────────────────────────
-# Chirpy theme — modern, polished, dark mode, mobile-responsive.
-# Free forever on GitHub Pages. Squarespace-level look.
+# Minimal Mistakes theme — rock-solid on GitHub Pages,
+# polished look, dark skin by default, simple + durable.
 # ────────────────────────────────────────────────────────────
 
-remote_theme: cotes2020/jekyll-theme-chirpy@v6.5.5
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "dark"   # options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
 
 # Site
-title: Danny Makhoul
-tagline: "Systems thinker building durable AI tools"
+title: "Danny Makhoul"
+subtitle: "Systems thinker · Durable AI tools · Vibe coding"
+name: "Danny Makhoul"
 description: >-
-  Vibe coding, durable architecture, tier-list thinking, and the honest
-  lessons from shipping real things. Written by Danny Makhoul.
+  Writing about vibe coding, durable architecture, tier-list thinking,
+  and the honest lessons from shipping real things.
 
 url: "https://dimmmak.github.io"
 baseurl: ""
 
 # Language
-lang: en
+locale: "en-US"
 timezone: America/New_York
 
-# Author info (shown on posts + sidebar)
+# Search
+search: true
+search_full_content: true
+
+# Author (sidebar profile)
 author:
-  name: Danny Makhoul
-  email:
-  github: DimmMak
-  # twitter: # add when ready
-  # linkedin: # add when ready
-
-# Navigation
-avatar: # drop an image in /assets/img/ and put path here when ready
-social:
-  name: Danny Makhoul
+  name: "Danny Makhoul"
+  bio: "Systems thinker building durable AI tools. Econ degree. Self-taught via Claude Code."
+  location: "USA"
   links:
-    - https://github.com/DimmMak
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/DimmMak"
 
-# Theme switcher (light/dark/auto)
-theme_mode: # [light | dark] — leave blank for auto
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/DimmMak"
 
-# Pagination
-paginate: 10
-
-# Highlighting
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: highlight
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
-
-# Permalinks — clean date-based URLs
-permalink: /posts/:title/
-
-# Defaults
+# Collections
 defaults:
   - scope:
       path: ""
       type: posts
     values:
-      layout: post
+      layout: single
+      author_profile: true
+      read_time: true
       comments: false
+      share: true
+      related: true
+      show_date: true
       toc: true
+      toc_sticky: true
 
-# Collections (Chirpy has tabs — Home / Categories / Tags / Archives / About)
-collections:
-  tabs:
-    output: true
-    sort_by: order
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
-# Plugins (GitHub Pages supported)
+# Permalinks
+permalink: /:categories/:title/
+
+# Build
+markdown: kramdown
+highlighter: rouge
+paginate: 10
+paginate_path: /page:num/
+
+# Plugins (GitHub Pages whitelist)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
   - jekyll-paginate
-  - jekyll-archives
 
-# Jekyll Archives config (Chirpy uses this for Categories/Tags pages)
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+# Categories / tags archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
-# Exclude from build
+# Excludes
 exclude:
-  - "*.gem"
-  - "*.gemspec"
-  - tools
-  - README.md
-  - LICENSE
-  - rollup.config.js
+  - Gemfile
+  - Gemfile.lock
   - node_modules
-  - package*.json
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
+# Include _pages collection
+include:
+  - _pages

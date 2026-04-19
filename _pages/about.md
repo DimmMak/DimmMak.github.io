@@ -1,17 +1,17 @@
 ---
-layout: page
-icon: fas fa-info-circle
-order: 4
-title: About
+title: "About"
+permalink: /about/
+layout: single
+author_profile: true
 ---
 
-# 🎯 About Danny
+## 🎯 About Danny
 
 Econ degree. Self-taught engineer via Claude Code. Targeting a data analyst role — but the bigger project is building durable AI-augmented tools that survive decades.
 
 ## 🏗️ What I build
 
-- **Blue Hill Capital** — a personal hedge fund stack (20+ AI skills, schema-enforced, auto-preserving)
+- **[Blue Hill Capital](https://github.com/DimmMak/blue-hill-capital)** — a personal hedge fund stack (20+ AI skills, schema-enforced, auto-preserving)
 - **Principles-first architecture** — every decision filtered through pinned rules before shipping
 - **Recursive refinement systems** — every fumble becomes a permanent upgrade
 

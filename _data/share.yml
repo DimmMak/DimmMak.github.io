@@ -1,8 +1,0 @@
-platforms:
-  - type: Twitter
-    icon: "fa-brands fa-twitter"
-    link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
-
-  - type: LinkedIn
-    icon: "fa-brands fa-linkedin"
-    link: "https://www.linkedin.com/sharing/share-offsite/?url=URL"
