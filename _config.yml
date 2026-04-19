@@ -1,0 +1,102 @@
+# ────────────────────────────────────────────────────────────
+# Chirpy theme — modern, polished, dark mode, mobile-responsive.
+# Free forever on GitHub Pages. Squarespace-level look.
+# ────────────────────────────────────────────────────────────
+
+remote_theme: cotes2020/jekyll-theme-chirpy@v6.5.5
+
+# Site
+title: Danny Makhoul
+tagline: "Systems thinker building durable AI tools"
+description: >-
+  Vibe coding, durable architecture, tier-list thinking, and the honest
+  lessons from shipping real things. Written by Danny Makhoul.
+
+url: "https://dimmmak.github.io"
+baseurl: ""
+
+# Language
+lang: en
+timezone: America/New_York
+
+# Author info (shown on posts + sidebar)
+author:
+  name: Danny Makhoul
+  email:
+  github: DimmMak
+  # twitter: # add when ready
+  # linkedin: # add when ready
+
+# Navigation
+avatar: # drop an image in /assets/img/ and put path here when ready
+social:
+  name: Danny Makhoul
+  links:
+    - https://github.com/DimmMak
+
+# Theme switcher (light/dark/auto)
+theme_mode: # [light | dark] — leave blank for auto
+
+# Pagination
+paginate: 10
+
+# Highlighting
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Permalinks — clean date-based URLs
+permalink: /posts/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+
+# Collections (Chirpy has tabs — Home / Categories / Tags / Archives / About)
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+
+# Jekyll Archives config (Chirpy uses this for Categories/Tags pages)
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# Exclude from build
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - tools
+  - README.md
+  - LICENSE
+  - rollup.config.js
+  - node_modules
+  - package*.json
