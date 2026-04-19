@@ -1,14 +1,17 @@
 ---
-layout: post
+layout: single
 title: "Building .gmail — The Intern / Senior / Architect Pattern for Email"
 date: 2026-04-19 14:00:00 -0400
 categories: [architecture, vibe-coding, skills]
 tags: [ai-fleet, gmail, mcp, phishing-detection, tree-structure, future-proofing]
+excerpt: "Built a Claude skill called .gmail today that triages my inbox through an Intern/Senior/Architect pattern. Shipped v0.1 → v0.1.5 in one session — 51 passing tests, structural no-send guarantee, six-signal phishing detection, 13.8-year projected half-life. Stealable for any LLM workflow where silent errors are unacceptable."
 ---
 
-# Building `.gmail` — Email Triage You Can Actually Trust
-
 **TL;DR:** Spent today building a Claude skill called `.gmail` that triages my inbox. Shipped it through v0.1 → v0.1.5 in five increments, each one driven by real problems found by stress-testing against actual email. Ended with 51 passing tests, a 13.8-year projected half-life, and six categories of hallucination and noise caught deterministically before they reach me.
+
+<!--more-->
+
+# Building `.gmail` — Email Triage You Can Actually Trust
 
 The architecture pattern — **Intern / Senior / Architect** — is the real takeaway. Stealable for any LLM-driven workflow where you can't afford silent errors.
 

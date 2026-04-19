@@ -1,55 +1,123 @@
 ---
-title: "Home"
-layout: default
+title: "Danny Makhoul"
+layout: single
 author_profile: true
+classes: wide
+permalink: /
 ---
 
-<div class="home-hero" style="margin-bottom: 2rem;">
-  <h1>🏛️ Building</h1>
-  <p class="lead">
-    <strong>Systems thinker. Econ degree. Vibe coder.</strong>
+<div class="notice--info" style="margin-bottom: 2rem;">
+  <h1 style="margin-top: 0; font-size: 2.4rem; line-height: 1.2;">
+    🏛️ Building durable AI tools
+  </h1>
+  <p style="font-size: 1.2rem; color: #d0d0d0; margin-bottom: 0.5rem;">
+    <strong>Systems thinker · Econ degree · Vibe coder</strong>
   </p>
-  <p>
+  <p style="font-size: 1.05rem; line-height: 1.6;">
     I'm building <a href="https://github.com/DimmMak/blue-hill-capital"><strong>Blue Hill Capital</strong></a>
-    — a personal hedge fund stack of 20+ Claude Code skills organized by a three-axis architecture
-    (tree + plugin + unix) that's provably durable for the next decade+.
+    — a personal hedge fund stack of 20+ Claude skills organized by a three-axis architecture
+    (tree + plugin + unix) with a projected <strong>13.8-year half-life</strong>.
   </p>
-  <p>
-    Read the full case study:
-    <strong><a href="https://github.com/DimmMak/the-overhaul">The Overhaul</a></strong>
-    — how I took my fleet from ~8-month half-life to ~13.8 years in one evening.
+  <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 0;">
+    Full case study: <strong><a href="https://github.com/DimmMak/the-overhaul">The Overhaul</a></strong>
+    — how I took a fleet from ~8 months of durability to ~14 years in one evening, with math.
   </p>
 </div>
 
-<hr />
+---
 
-<h2>📝 Recent Posts</h2>
+<h2 style="border-bottom: 2px solid #4a7eff; padding-bottom: 0.5rem;">📝 Recent posts</h2>
 
-<ul class="post-list" style="list-style: none; padding-left: 0;">
-  {% for post in site.posts %}
-    <li style="margin-bottom: 1.5rem; border-bottom: 1px solid #2a2a2a; padding-bottom: 1rem;">
-      <h3 style="margin-bottom: 0.25rem;">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h3>
-      <small style="color: #888;">
-        {{ post.date | date: "%B %-d, %Y" }}
-        {% if post.categories %} · {% for cat in post.categories %}<em>{{ cat }}</em>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
-      </small>
-      {% if post.excerpt %}
-        <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+<div class="grid__wrapper" style="display: flex; flex-direction: column; gap: 1.5rem;">
+{% for post in site.posts %}
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"
+           style="padding: 1.5rem; background: #1e1e1e; border-left: 4px solid #4a7eff; border-radius: 6px;">
+
+    <h3 class="archive__item-title" itemprop="headline" style="margin-top: 0; font-size: 1.4rem; line-height: 1.3;">
+      <a href="{{ post.url | relative_url }}" rel="permalink" style="color: #e0e0e0; text-decoration: none;">
+        {{ post.title }}
+      </a>
+    </h3>
+
+    <p class="page__meta" style="color: #888; font-size: 0.9rem; margin-bottom: 0.8rem;">
+      <i class="far fa-calendar-alt"></i>
+      {{ post.date | date: "%B %-d, %Y" }}
+      {% if post.read_time %}
+        &nbsp;·&nbsp; <i class="far fa-clock"></i>
+        {% assign words = post.content | number_of_words %}
+        {% if words < 360 %}1{% else %}{{ words | divided_by: 180 }}{% endif %} min read
       {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+      {% if post.categories %}
+        &nbsp;·&nbsp;
+        {% for cat in post.categories %}
+          <span style="background: #2a2a2a; padding: 2px 8px; border-radius: 3px; font-size: 0.8rem; margin-right: 4px;">
+            {{ cat }}
+          </span>
+        {% endfor %}
+      {% endif %}
+    </p>
 
-<hr />
+    {% if post.excerpt %}
+      <div class="archive__item-excerpt" itemprop="description" style="color: #c0c0c0; line-height: 1.6;">
+        {{ post.excerpt | strip_html | truncate: 240 }}
+      </div>
+    {% endif %}
 
-<h2>🔗 Projects</h2>
+    <p style="margin-top: 1rem; margin-bottom: 0;">
+      <a href="{{ post.url | relative_url }}" class="btn btn--primary btn--small">
+        Read more →
+      </a>
+    </p>
+  </article>
+{% endfor %}
+</div>
 
-<ul>
-  <li><a href="https://github.com/DimmMak/the-overhaul">the-overhaul</a> — case study: 20× durability gain in one evening</li>
-  <li><a href="https://github.com/DimmMak/blue-hill-capital">blue-hill-capital</a> — the fund stack itself</li>
-  <li><a href="https://github.com/DimmMak/skill-builder">skill-builder</a> — the meta-skill for building skills</li>
-  <li><a href="https://github.com/DimmMak/future-proof">future-proof</a> — preservation coach</li>
-  <li><a href="https://github.com/DimmMak">All repos</a> — the full fleet</li>
-</ul>
+---
+
+<h2 style="border-bottom: 2px solid #4a7eff; padding-bottom: 0.5rem;">🔗 Projects</h2>
+
+<div class="grid__wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+
+  <div style="padding: 1rem; background: #1e1e1e; border-radius: 6px; border-top: 3px solid #4a7eff;">
+    <h3 style="margin-top: 0;"><a href="https://github.com/DimmMak/the-overhaul">the-overhaul</a></h3>
+    <p style="color: #c0c0c0; font-size: 0.95rem; margin-bottom: 0;">
+      Case study: 20× durability gain in one evening. Three-axis architecture.
+    </p>
+  </div>
+
+  <div style="padding: 1rem; background: #1e1e1e; border-radius: 6px; border-top: 3px solid #ff6b4a;">
+    <h3 style="margin-top: 0;"><a href="https://github.com/DimmMak/blue-hill-capital">blue-hill-capital</a></h3>
+    <p style="color: #c0c0c0; font-size: 0.95rem; margin-bottom: 0;">
+      The personal hedge fund stack itself. 20+ skills, royal-rumble committee, accuracy tracking.
+    </p>
+  </div>
+
+  <div style="padding: 1rem; background: #1e1e1e; border-radius: 6px; border-top: 3px solid #4aff9a;">
+    <h3 style="margin-top: 0;"><a href="https://github.com/DimmMak/skill-builder">skill-builder</a></h3>
+    <p style="color: #c0c0c0; font-size: 0.95rem; margin-bottom: 0;">
+      The meta-skill for building new skills. Gate-check → real example → scaffold.
+    </p>
+  </div>
+
+  <div style="padding: 1rem; background: #1e1e1e; border-radius: 6px; border-top: 3px solid #ff4aff;">
+    <h3 style="margin-top: 0;"><a href="https://github.com/DimmMak/future-proof">future-proof</a></h3>
+    <p style="color: #c0c0c0; font-size: 0.95rem; margin-bottom: 0;">
+      Preservation coach. Stress tests, validators, schema migrations.
+    </p>
+  </div>
+
+  <div style="padding: 1rem; background: #1e1e1e; border-radius: 6px; border-top: 3px solid #ffcc4a;">
+    <h3 style="margin-top: 0;"><a href="https://github.com/DimmMak/cowork-recipes">cowork-recipes</a></h3>
+    <p style="color: #c0c0c0; font-size: 0.95rem; margin-bottom: 0;">
+      Ready-to-run Cowork automations: blog distribution, LinkedIn outreach, lecture capture.
+    </p>
+  </div>
+
+  <div style="padding: 1rem; background: #1e1e1e; border-radius: 6px; border-top: 3px solid #888;">
+    <h3 style="margin-top: 0;"><a href="https://github.com/DimmMak">All repos →</a></h3>
+    <p style="color: #c0c0c0; font-size: 0.95rem; margin-bottom: 0;">
+      The complete fleet. Everything I'm building in public.
+    </p>
+  </div>
+
+</div>

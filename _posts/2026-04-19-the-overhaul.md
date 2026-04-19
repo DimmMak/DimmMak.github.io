@@ -1,14 +1,17 @@
 ---
-layout: post
+layout: single
 title: "The Overhaul — From 8 Months to 14 Years in One Evening"
 date: 2026-04-19 01:00:00 -0400
 categories: [architecture, vibe-coding]
 tags: [ai-fleet, schema-validation, durable-systems]
+header:
+  teaser: /assets/images/overhaul-teaser.png
+excerpt: "Half-life of my AI skill fleet went from ~8 months to ~13.8 years in one evening, using three orthogonal design axes — tree + plugin + unix. The full case study with math, mechanism, and source code."
 ---
 
-# The Overhaul
-
 **Half-life of my AI skill fleet went from ~8 months to ~13.8 years. In one evening. With math.**
+
+<!--more-->
 
 Tonight I took my personal hedge fund stack — 20 skills built ad-hoc over weeks — and applied three orthogonal design axes (tree + plugin + unix) to make it survive decades of tool churn.
 
