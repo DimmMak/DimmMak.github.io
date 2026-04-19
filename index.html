@@ -1,5 +1,55 @@
 ---
 title: "Home"
-layout: home
+layout: default
 author_profile: true
 ---
+
+<div class="home-hero" style="margin-bottom: 2rem;">
+  <h1>🏛️ Building</h1>
+  <p class="lead">
+    <strong>Systems thinker. Econ degree. Vibe coder.</strong>
+  </p>
+  <p>
+    I'm building <a href="https://github.com/DimmMak/blue-hill-capital"><strong>Blue Hill Capital</strong></a>
+    — a personal hedge fund stack of 20+ Claude Code skills organized by a three-axis architecture
+    (tree + plugin + unix) that's provably durable for the next decade+.
+  </p>
+  <p>
+    Read the full case study:
+    <strong><a href="https://github.com/DimmMak/the-overhaul">The Overhaul</a></strong>
+    — how I took my fleet from ~8-month half-life to ~13.8 years in one evening.
+  </p>
+</div>
+
+<hr />
+
+<h2>📝 Recent Posts</h2>
+
+<ul class="post-list" style="list-style: none; padding-left: 0;">
+  {% for post in site.posts %}
+    <li style="margin-bottom: 1.5rem; border-bottom: 1px solid #2a2a2a; padding-bottom: 1rem;">
+      <h3 style="margin-bottom: 0.25rem;">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <small style="color: #888;">
+        {{ post.date | date: "%B %-d, %Y" }}
+        {% if post.categories %} · {% for cat in post.categories %}<em>{{ cat }}</em>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
+      </small>
+      {% if post.excerpt %}
+        <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+<hr />
+
+<h2>🔗 Projects</h2>
+
+<ul>
+  <li><a href="https://github.com/DimmMak/the-overhaul">the-overhaul</a> — case study: 20× durability gain in one evening</li>
+  <li><a href="https://github.com/DimmMak/blue-hill-capital">blue-hill-capital</a> — the fund stack itself</li>
+  <li><a href="https://github.com/DimmMak/skill-builder">skill-builder</a> — the meta-skill for building skills</li>
+  <li><a href="https://github.com/DimmMak/future-proof">future-proof</a> — preservation coach</li>
+  <li><a href="https://github.com/DimmMak">All repos</a> — the full fleet</li>
+</ul>
