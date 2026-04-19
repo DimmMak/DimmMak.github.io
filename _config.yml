@@ -28,6 +28,7 @@ search_full_content: true
 # Author (sidebar profile)
 author:
   name: "Danny Makhoul"
+  avatar: "https://github.com/DimmMak.png"
   bio: "Systems thinker building durable AI tools. Econ degree. Self-taught via Claude Code."
   location: "USA"
   links:

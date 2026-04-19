@@ -1,5 +1,13 @@
 <!-- Dark-mode enforcement + link-color overrides. Minimal Mistakes
-     auto-includes _includes/head/custom.html on every page. -->
+     auto-includes _includes/head/custom.html on every page.
+     Build stamp below lets you verify cache-bust succeeded. -->
+
+<!-- BUILD: {{ site.time | date: "%Y-%m-%d %H:%M:%S UTC" }} -->
+<meta name="build-time" content="{{ site.time | date: '%Y-%m-%d %H:%M:%S UTC' }}">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <style>
   html, body {
     background-color: #141414 !important;
