@@ -3,7 +3,7 @@
 # polished look, dark skin by default, simple + durable.
 # ────────────────────────────────────────────────────────────
 
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "dark"   # options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
 
 # Site
