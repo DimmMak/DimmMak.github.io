@@ -1,0 +1,53 @@
+<!-- Dark-mode enforcement + link-color overrides. Minimal Mistakes
+     auto-includes _includes/head/custom.html on every page. -->
+<style>
+  html, body {
+    background-color: #141414 !important;
+    color: #e0e0e0 !important;
+  }
+
+  .masthead,
+  .page__footer,
+  .sidebar,
+  .greedy-nav,
+  .greedy-nav__toggle {
+    background-color: #1a1a1a !important;
+    color: #d0d0d0 !important;
+  }
+
+  /* Project + archive card link titles — light grey, not deep blue */
+  .archive__item a,
+  .archive__item-title a,
+  .grid__wrapper h3 a,
+  .grid__wrapper a {
+    color: #d0d0d0 !important;
+    text-decoration: none !important;
+  }
+
+  .grid__wrapper h3 a:hover,
+  .archive__item a:hover {
+    color: #4a7eff !important;
+  }
+
+  /* Prose links stay readable blue */
+  .page__content p a,
+  .page__content li a {
+    color: #6b9eff;
+  }
+  .page__content p a:hover,
+  .page__content li a:hover {
+    color: #9bbeff;
+  }
+
+  /* Notice-info hero matches dark theme */
+  .notice--info {
+    background-color: #1a2540 !important;
+    border-left: 4px solid #4a7eff !important;
+    color: #e0e0e0 !important;
+  }
+
+  /* Dark scrollbar */
+  ::-webkit-scrollbar { width: 10px; background: #141414; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: #555; }
+</style>
