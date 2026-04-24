@@ -7,3 +7,9 @@ vendor/
 Gemfile.lock
 node_modules/
 .DS_Store
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+.env
