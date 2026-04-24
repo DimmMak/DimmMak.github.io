@@ -1,0 +1,51 @@
+# Dependabot keeps deps fresh so our automation doesn't rot.
+# Runs weekly Monday mornings (same cadence as the inbox health digest).
+# PRs are auto-verified by the Playwright Tests workflow before you merge.
+# Docs: https://docs.github.com/en/code-security/dependabot
+
+version: 2
+
+updates:
+  # npm — Playwright + dev tools
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "npm"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      playwright:
+        patterns:
+          - "@playwright/*"
+          - "playwright"
+      dev-tools:
+        patterns:
+          - "*"
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # GitHub Actions — keep actions/checkout@v4, setup-node@v4, etc. fresh
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
