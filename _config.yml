@@ -102,6 +102,12 @@ exclude:
   - .sass-cache
   - .jekyll-cache
   - .jekyll-metadata
+  - package.json
+  - package-lock.json
+  - playwright.config.ts
+  - playwright-report
+  - test-results
+  - tests
 
 # Include _pages collection
 include:
