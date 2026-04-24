@@ -1,0 +1,16 @@
+{
+    "name": "dimmmak-github-io",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Playwright smoke tests for https://dimmmak.github.io",
+    "scripts": {
+          "test": "playwright test",
+          "test:ui": "playwright test --ui",
+          "test:debug": "playwright test --debug",
+          "test:headed": "playwright test --headed"
+    },
+    "devDependencies": {
+          "@playwright/test": "^1.48.0",
+          "@types/node": "^22.0.0"
+    }
+}
